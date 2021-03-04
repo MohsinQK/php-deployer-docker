@@ -2,24 +2,11 @@ FROM php:7.4-alpine
 
 # Install production dependencies
 RUN apk add --no-cache \
-    bash \
-    curl \
-    freetype-dev \
-    g++ \
-    gcc \
     git \
-    icu-dev \
-    icu-libs \
-    libc-dev \
-    libjpeg-turbo-dev \
-    libpng-dev \
-    libzip-dev \
-    make \
+    openssh-client \
     nodejs \
     nodejs-npm \
-    openssh-client \
-    rsync \
-    zlib-dev
+    rsync 
 
 # Install Deployer
 RUN curl -LO https://deployer.org/deployer.phar && mv deployer.phar /usr/local/bin/dep && chmod +x /usr/local/bin/dep
